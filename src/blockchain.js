@@ -7,6 +7,7 @@ class Transaction{
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
         this.amount = amount;
+        this.timestamp = Date.now();
     }
 
     calculateHash(){
@@ -102,7 +103,7 @@ class Blockchain{
      * Creates a predefined block, with previous hash of 0
      */
     createGenesisBlock(){
-        return new Block(Date.now(), "Genesis Block", "0");
+        return new Block(Date.now(), [], "0");
     }
 
     getLatestBlock(){
